@@ -14,6 +14,6 @@ def rastrigin_Evaluate(pop, d):
     miscVal[0] = np.random.rand(1,len(pop))
     miscVal[1] = np.zeros(1,len(pop))
        
-
+    return fitness, behaviour, miscVal, pop
     # miscVal{1} = rand (1,length(pop));
     # miscVal{2} = zeros(1,length(pop));
