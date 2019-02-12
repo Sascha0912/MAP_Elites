@@ -19,3 +19,4 @@ def createMap(mapDims, sampleInd):
     map.misc = mapDims.misc
     for iValues in range(len(map.misc)):
         eval('map.' + map.misc[iValues] + ' = np.nan(mapDims.res)')
+    return map
