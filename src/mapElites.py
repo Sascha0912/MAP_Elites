@@ -1,7 +1,7 @@
-from createMap import createMap
-from addToMap import addToMap
-from createChildren import createChildren
-from visualization.viewMap import viewMap
+from src.addToMap import addToMap
+from src.createMap import createMap1
+from src.createChildren import createChildren
+from src.visualization.viewMap import viewMap
 import numpy as np
 def mapElites(**kwargs):
     def feval(funcName,*args):
@@ -36,10 +36,10 @@ def mapElites(**kwargs):
         raise ValueError('Domain is required!')
     
     # Fill initial map
-    if startMap.size!=0:
+    if len(startMap)!=0:
         map = startMap
     else:
-        map = createMap(d.mapDims,d.sampleInd)
+        map = createMap1(d.mapDims,d.sampleInd)
         startPop = feval(d.randInd,d.nInitial,d.recombine)
         fitness, behaviour, misc, startPop = feval(d.evaluate,startPop,d)
         map = addToMap(map,startPop,fitness,behaviour,misc)
@@ -82,9 +82,3 @@ def mapElites(**kwargs):
     # TODO: implement
 
     return map, record
-
-            
-
-
-    
-      

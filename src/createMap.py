@@ -1,11 +1,12 @@
 import numpy as np
 import math
-def createMap(mapDims, sampleInd):
+def createMap1(mapDims, sampleInd):
     class Map:
         def __init__(self):
             self.edges = []
 
     map = Map()
+    print("hey")
     for i in range(len(mapDims.res)):
         map.edges[i] = np.linspace(mapDims.min[i], mapDims.max[i], mapDims.res[i]+1)
         map.edges[i][0] = -np.inf

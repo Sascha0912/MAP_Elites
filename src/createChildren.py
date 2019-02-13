@@ -1,5 +1,5 @@
 import numpy as np
-from math import *
+import math
 def createChildren(map, d):
     def feval(funcName,*args):
         return eval(funcName)(*args)
