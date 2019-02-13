@@ -42,7 +42,7 @@ plt.ylabel('Proportion of Newly Created\nChildren Entering Map')
 plt.grid()
 
 eights = np.arange(len(record.evals)/8,len(record.evals),len(record.evals)/8)
-for i in range(8)
+for i in range(8):
     plt.subplot(4,4,8+i)
     id = eights[i]
     h = viewMap(record.map[id]) # Alter graphics afterward

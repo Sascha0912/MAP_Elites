@@ -1,4 +1,4 @@
-from math import *
+import math
 import numpy as np
 def rastrigin_Evaluate(pop, d):
     def feval(funcName,*args):
