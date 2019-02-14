@@ -6,18 +6,20 @@ def createMap1(mapDims, sampleInd):
             self.edges = []
 
     map = Map()
-    print("hey")
-    for i in range(len(mapDims.res)):
-        map.edges[i] = np.linspace(mapDims.min[i], mapDims.max[i], mapDims.res[i]+1)
+    for i in range(0,len(mapDims.res)):
+        map.edges.insert(i,np.linspace(mapDims.min[i], mapDims.max[i], mapDims.res[i]+1)) 
         map.edges[i][0] = -np.inf
         map.edges[i][-1] = np.inf
     
     map.label = mapDims.label
-    map.fitness = np.nan(mapDims.res)
+    map.fitness = np.empty(mapDims.res) #np.nan(mapDims.res)
+    map.fitness[:] = np.nan
     map.genomes = np.tile(sampleInd, mapDims.res)
 
     # Include additional values of interest per bin
     map.misc = mapDims.misc
     for iValues in range(len(map.misc)):
-        eval('map.' + map.misc[iValues] + ' = np.nan(mapDims.res)')
+        exec('Map.'+map.misc[iValues]+'=property(np.full(mapDims.res, np.nan))')
+        # eval('map.'+map.misc[iValues]+'=np.empty(mapDims.res)')
+        # exec('map.'+map.misc[iValues][:]+'=np.nan')
     return map

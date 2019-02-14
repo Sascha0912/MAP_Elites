@@ -1,3 +1,4 @@
+from domain.rastrigin.rastrigin_RandInd import rastrigin_RandInd
 from src.addToMap import addToMap
 from src.createMap import createMap1
 from src.createChildren import createChildren
@@ -11,11 +12,13 @@ def mapElites(**kwargs):
             self.evals    = []
             self.improved = []
             self.map      = []
-    d = None
+            
+    d        = None
     startMap = []
     visMod   = 2**0
     gifMap   = False
     recMod   = False   
+
     for key, value in kwargs.items():
         if key=="domain":
             d = value
@@ -78,7 +81,7 @@ def mapElites(**kwargs):
         record.improved = record.improved[recorded]
         record.map      = record.map[recorded]
 
-    # Include method for inspecting individulas in map
+    # Include method for inspecting individuals in map
     # TODO: implement
 
     return map, record

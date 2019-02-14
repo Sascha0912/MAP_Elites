@@ -1,13 +1,13 @@
 # demo - MAP-Elites demo usage script
 from domain.rastrigin.rastrigin_Domain import rastrigin_Domain
+# from domain.rastrigin.rastrigin_RandInd import rastrigin_RandInd
 from src.mapElites import mapElites
 import matplotlib.pyplot as plt
 import numpy as np
 from src.visualization.viewMap import viewMap
-# from createMap import createMap1
 
 # Load problem domain
-d = rastrigin_Domain
+d = rastrigin_Domain()
 
 # Run MAP-Elites with default parameters
 map = mapElites(domain=d)
