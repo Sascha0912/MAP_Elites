@@ -8,7 +8,7 @@ def rastrigin_Domain():
 
             self.evaluate = 'rastrigin_Evaluate'
             self.objFun   = 'rastrigin_FitnessFunc'
-            self.getBc    = 'rastrigin_GetBehavior'
+            self.getBc    = 'rastrigin_GetBehaviour'
             self.breedPop = 'rastrigin_Variation'
             self.randInd  = 'rastrigin_RandInd'
 

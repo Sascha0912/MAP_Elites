@@ -1,4 +1,6 @@
 from domain.rastrigin.rastrigin_RandInd import rastrigin_RandInd
+from domain.rastrigin.rastrigin_Evaluate import rastrigin_Evaluate
+from domain.rastrigin.rastrigin_GetBehaviour import rastrigin_GetBehaviour
 from src.addToMap import addToMap
 from src.createMap import createMap1
 from src.createChildren import createChildren

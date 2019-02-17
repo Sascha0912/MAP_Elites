@@ -12,5 +12,6 @@ def rastrigin_RandInd(nInds, d):
         # print(np.array[scaledRandom[0][i],scaledRandom[1][i]])
         # TODO: fix subattribute problem here
         # .genome ??
-        randInds.insert(i,[scaledRandom[0][i],scaledRandom[1][i]])
+        genome = {i:[scaledRandom[0][i],scaledRandom[1][i]]}
+        randInds.insert(i,genome)
     return randInds
