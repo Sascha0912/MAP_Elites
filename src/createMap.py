@@ -14,8 +14,9 @@ def createMap1(mapDims, sampleInd):
     map.label = mapDims.label
     map.fitness = np.empty(mapDims.res) #np.nan(mapDims.res)
     map.fitness[:] = np.nan
+    print(sampleInd) # TODO: check MATLAB here for values
     map.genomes = np.tile(sampleInd, mapDims.res)
-
+    print(map.genomes)
     # Include additional values of interest per bin
     map.misc = mapDims.misc
     for iValues in range(len(map.misc)):

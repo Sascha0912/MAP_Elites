@@ -66,17 +66,17 @@ def nicheCompete(map,fitness,behaviour):
     improvement[np.isnan(fitness.iloc[0][bestIndex])] = False
     
     # improvement = improvement*1 # convert true to 1 and false to 0
-    print("improvement")
-    print(improvement)
+    # print("improvement")
+    # print(improvement)
     # print(repl)
-    print("bestIndex")
-    print(bestIndex)
+    # print("bestIndex")
+    # print(bestIndex)
     replacement = [bestIndex[i] for i in range(len(bestIndex)) if improvement[improvement.index.values.tolist()[i]]]
-    print("replacement")
-    print(replacement)
+    # print("replacement")
+    # print(replacement)
     replaced = mapLinIndx[improvement.tolist()]
-    print("replaced")
-    print(replaced)
+    # print("replaced")
+    # print(replaced)
 
     return replaced, replacement
 
