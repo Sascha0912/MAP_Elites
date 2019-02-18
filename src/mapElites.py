@@ -46,7 +46,14 @@ def mapElites(**kwargs):
     else:
         map = createMap1(d.mapDims,d.sampleInd)
         startPop = feval(d.randInd,d.nInitial,d.recombine)
+        # print(d.evaluate)
+        # print(startPop)
+        # print(d)
         fitness, behaviour, misc, startPop = feval(d.evaluate,startPop,d)
+        
+        # print(behaviour)
+        # print(misc)
+        # print(startPop)
         map = addToMap(map,startPop,fitness,behaviour,misc)
 
     # TODO: create gif
