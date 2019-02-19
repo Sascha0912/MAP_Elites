@@ -44,9 +44,8 @@ def mapElites(**kwargs):
     if len(startMap)!=0:
         map = startMap
     else:  
-        map = createMap1(d.mapDims,d.sampleInd)
-        print(map.genomes)
-        startPop = feval(d.randInd,d.nInitial,d.recombine)
+        map = createMap1(d.mapDims_res, d.mapDims_label, d.mapDims_min, d.mapDims_max, d.mapDims_misc, d.sampleInd_genome)
+        startPop = feval(d.randInd,d.nInitial, d.recombine_range, d.recombine_mutSigma, d.recombine_parents)
         # print(d.evaluate)
         # print(startPop)
         # print(d)

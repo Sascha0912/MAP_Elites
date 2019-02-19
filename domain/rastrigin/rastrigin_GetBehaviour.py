@@ -4,7 +4,7 @@ def rastrigin_GetBehaviour(pop):
     # behaviour = [[] for i in range(64)]
     behaviour = []
     for i in range(len(pop)):
-        behaviour.append(pop[i][i])
+        behaviour.append(pop[i])
     # print(behaviour)
     df = pd.DataFrame(data=behaviour)
     df_t = df.transpose()
