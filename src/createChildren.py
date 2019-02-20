@@ -7,7 +7,7 @@ def createChildren(map, d):
     # Remove empty bins from parent pool
     # print("map")
     # print(map)
-    parentPool = map[0].genomes
+    parentPool = map.genomes
     # print("parentPool")
     # print(parentPool)
     # print(parentPool)

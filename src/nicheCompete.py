@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 def nicheCompete(map,fitness,behaviour):
-    def sub2ind(array_shape, rows, cols):
-        return rows * array_shape[1] + cols
+    # def sub2ind(array_shape, rows, cols):
+    #     return rows * array_shape[1] + cols
     # def colIdx(list_colnr,mapfit):
     #     list_idx = []
     #     mapfit_t = mapfit.transpose()
@@ -16,7 +16,11 @@ def nicheCompete(map,fitness,behaviour):
     #     return list_idx
 
     # Get bin of each individual beased on behaviour
+    print("behaviour")
+    print(behaviour)
     nDims = np.shape(behaviour)[0]
+    print("nDims")
+    print(nDims)
     # print(behaviour)
     bin1 = [[] for i in range(nDims)]
     for iDim in range(nDims):
@@ -35,6 +39,7 @@ def nicheCompete(map,fitness,behaviour):
     a = df_bin1.append(fitness.iloc[0], ignore_index=True).transpose()
     # print(a)
     # indxSortOne = np.argsort(a[:][:])
+    print(a)
     sortedByFeatureAndFitness = a.sort_values(by=[0,1,2])
     # print(sortedByFeatureAndFitness)
     indxSortOne = list(sortedByFeatureAndFitness.index.values)

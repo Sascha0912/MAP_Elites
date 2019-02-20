@@ -6,6 +6,7 @@ def addToMap(map, newInd, fitness, behaviour, misc):
     # print(map.genomes)
     map = updateMap(replaced, replacement, map, newInd, fitness, misc)
 
-    improved = len(replaced)/len(newInd)
+    # TEST: delete this
+    # improved = len(replaced)/len(newInd)
 
-    return map, improved
+    return map

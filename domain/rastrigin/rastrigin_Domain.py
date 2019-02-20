@@ -45,7 +45,7 @@ def rastrigin_Domain():
             
 
             self.recombine_range = [-2, 2]
-            self.recombine_mutSigma = [[1/8], [1/10]]
+            self.recombine_mutSigma = [1.0/8, 1.0/10]
             self.recombine_parents = 1
 
             # Recombine = namedtuple('Recombine','range mutSigma parents')
