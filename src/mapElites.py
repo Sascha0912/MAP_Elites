@@ -93,7 +93,7 @@ def mapElites(**kwargs):
         map = addToMap(map,startPop,fitness,behaviour,misc)
         # map besteht aus Map-Object und improved-Wert -> Nur Map-Object wird zu diesem Zeitpunkt benötigt
         # print("map")
-        pprint(vars(map[0]))
+        # pprint(vars(map[0]))
         # In der map fehlen: Die Attribute otherValue1 und 2 (TODO:wegen gestrichenem Part in updateMap)
 
 

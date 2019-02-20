@@ -55,4 +55,4 @@ def updateMap(replaced,replacement,map,newInd,fitness,misc):
         
     #     exec('map.' + map.misc[iValues] + '[replaced] = misc[' + str(iValues) + '][replacement]')
 
-    return map #PROBLEM!!!
+    return map
