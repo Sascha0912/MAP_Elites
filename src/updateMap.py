@@ -32,25 +32,27 @@ def updateMap(replaced,replacement,map,newInd,fitness,misc):
     # print(np.shape(newInd))
     # print("df_map_genomes")
     # print(df_map_genomes)
-
+    basic_shape = map.genomes.shape
     map_genomes_re = map.genomes.reshape((map.genomes.size, 1))
-    print("map_genomes_re")
-    print(map_genomes_re)
-    print("newInd")
-    print(newInd)
-    print("replaced")
-    print(replaced)
-    print("replacement")
-    print(replacement)
+    # print("map_genomes_re")
+    # print(map_genomes_re)
+    # print("newInd")
+    # print(newInd)
+    # print("replaced")
+    # print(replaced)
+    # print("replacement")
+    # print(replacement)
     for i in range(len(replaced)):
         pos = replaced[i]
-        map_genomes_re[pos][0] = newInd[replacement[i]][0]
-        map_genomes_re[pos+1][0] = newInd[replacement[i]][1]
+        map_genomes_re[2*pos][0] = newInd[replacement[i]][0]
+        map_genomes_re[2*pos+1][0] = newInd[replacement[i]][1]
+        # print(i)
         # print(map_genomes_re)
     # map.genomes[replaced] = newInd[replacement]
-
+    map.genomes = map_genomes_re.reshape(basic_shape,order='F')
     # Replace Miscellaneous Map values
-    for iValues in range(len(map.misc)):
-        exec('map.' + map.misc[iValues] + '[replaced] = misc[' + str(iValues) + '][replacement]')
+    # for iValues in range(len(map.misc)):
+        
+    #     exec('map.' + map.misc[iValues] + '[replaced] = misc[' + str(iValues) + '][replacement]')
 
-    return map
+    return map #PROBLEM!!!

@@ -21,7 +21,16 @@ def createMap1(mapDims_res, mapDims_label, mapDims_min, mapDims_max, mapDims_mis
     # print(sampleInd_genome) # TODO: check MATLAB here for values
     # print(mapDims_res[0])
     map.genomes = np.empty(mapDims_res) # make an empty array with shape mapDims.res
+    # print("map.genomes")
+    # print(map.genomes)
+    # sampleInd_genome[0] = 1
+    # print("sampleInd_genome")
+    # print(sampleInd_genome)
     map.genomes = numpy.matlib.repmat(sampleInd_genome, mapDims_res[0], mapDims_res[1])
+    
+    # Hier: 16x10 numpy Array -> in MATLAB 8x10 struct mit 2x1 listen
+    # In beiden Fällen sind an dieser Stelle alle Werte mit NaN belegt
+
     # print("map.genomes")
     # print(map.genomes)
     # print(map.genomes)

@@ -14,7 +14,7 @@ map = mapElites(domain=d)
 map = mapElites(domain=d, startMap=map)
 
 # Increase resolution and number of children
-d.mapDims.res = [20, 25] # Set resolution of map
+d.mapDims_res = [20, 25] # Set resolution of map
 d.nEvals      = 2**13    # Set evaluation budget
 d.nInitial    = 2**7     # Set number of initial random samples
 d.batchSize   = 2**8     # Set number of children to create at one time
@@ -22,7 +22,7 @@ d.batchSize   = 2**8     # Set number of children to create at one time
 map = mapElites(domain=d)
 
 # Run at higher res
-d.mapDims.res = [100, 100]
+d.mapDims_res = [100, 100]
 d.nEvals      = 2**16
 d.nInitial    = 2**7
 d.batchSize   = 2**9
