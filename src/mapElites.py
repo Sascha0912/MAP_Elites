@@ -60,13 +60,6 @@ def mapElites(**kwargs):
         # In beiden Fällen sind an dieser Stelle alle Werte mit Werten zw. -2 und +2 belegt
         # startPop OK
 
-
-        # startPop
-        # print("startPop")
-        # print(startPop)
-        # print(d.evaluate)
-        # print(startPop)
-        # print(d)
         fitness, behaviour, misc, startPop = feval(d.evaluate,startPop,d)
         # print(fitness)
         # VERMUTUNG: fitness values hat deshalb 2x64 format, weil startPop 64x2 ist
@@ -95,10 +88,6 @@ def mapElites(**kwargs):
         # print("map")
         # pprint(vars(map[0]))
         # In der map fehlen: Die Attribute otherValue1 und 2 (TODO:wegen gestrichenem Part in updateMap)
-
-
-
-    # print("map")
     
     # TODO: create gif
 
@@ -115,9 +104,12 @@ def mapElites(**kwargs):
         nEvals = nEvals + len(children)
         gen = gen + 1
         if ~np.remainder(gen,visMod):
+            # pass
+            # TEST: no view
             viewMap(map)
-            if gifMap:
-                print("gif")
+
+            # if gifMap:
+                # print("gif")
                 # TODO: gif
 
         record = Record()

@@ -33,8 +33,6 @@ def updateMap(replaced,replacement,map,newInd,fitness,misc):
         map_genomes_re[2*pos][0] = newInd[replacement[i]][0]
         map_genomes_re[2*pos+1][0] = newInd[replacement[i]][1]
 
-    # map.genomes[replaced] = newInd[replacement]
-
     # Because map is no tuple in first iteration
     if (mapIsTuple):
         if (isinstance(map[0], tuple)):

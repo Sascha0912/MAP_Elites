@@ -6,6 +6,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 from src.visualization.viewMap import viewMap
 
+# Time Tracking
+import time
+current_milli_time = lambda: int(round(time.time() * 1000))
+
 # Load problem domain
 d = rastrigin_Domain()
 
@@ -19,7 +23,10 @@ d.nEvals      = 2**13    # Set evaluation budget
 d.nInitial    = 2**7     # Set number of initial random samples
 d.batchSize   = 2**8     # Set number of children to create at one time
 
+# t1 = current_milli_time()
 map = mapElites(domain=d)
+# t2 = current_milli_time()
+# print("mapElites(domain=d) took: " + str(t2-t1))
 
 # Run at higher res
 d.mapDims_res = [100, 100]

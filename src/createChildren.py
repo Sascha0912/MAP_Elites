@@ -9,7 +9,6 @@ def createChildren(map, d):
 
     # Because map is no tuple in first iteration
     if (mapIsTuple):
-        # TEST
         # In next iteration its a tuple ((Map object, improved), Record object)
         if (isinstance(map[0], tuple)):
             parentPool = map[0][0].genomes
@@ -17,32 +16,16 @@ def createChildren(map, d):
             parentPool = map[0].genomes
     else:
         parentPool = map.genomes
-    # print("parentPool")
-    # print(parentPool)
-    # print(parentPool)
-    basic_shape = parentPool.shape
     parentPool_re = parentPool.reshape((parentPool.size,1),order='F')
-
-    # print("parentPool_re Before")
-    # print(parentPool_re)
     parentPool_re = parentPool_re[~np.isnan(parentPool_re)]
-    # parentPool_re is now row vector and not column vector anymore
-    # print("parentPool_re After")
-    # print(parentPool_re)
-
-    # parentPool[np.isnan(map[0].fitness)] = []
 
     # Uniform random selection of parents from parent pool
-    # !! parentPool is always =0 mod 2
     selection = np.random.randint(0,high=len(parentPool_re)/2,size=[d.batchSize, d.recombine_parents])
-    parents = []#parentPool_re[selection]
+    parents = []
     for sel in selection:
         parents.append(parentPool_re[sel*2])
         parents.append(parentPool_re[sel*2+1])
-    # print("selction")
-    # print(selection)
-    # print("parents")
-    # print(parents)
+        
     # Create new population from parents
     children = feval(d.breedPop, parents, d.recombine_range, d.recombine_mutSigma)
 

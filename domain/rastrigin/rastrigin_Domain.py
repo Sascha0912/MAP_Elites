@@ -24,34 +24,12 @@ def rastrigin_Domain():
             self.mapDims_max = [2, 2]
             self.mapDims_misc = ['otherVal1','otherVal2']               
 
-            # MapDims = namedtuple('Mapdims','res label min max misc')
-            # self.mapDims = MapDims([8,10], ['x-coord','y-coord'], [-2, -1], [2, 2], ['otherVal1','otherVal2'])
-            
-            # self.mapDims.res   = [8, 10]
-            # self.mapDims.label = ['x-coord','y-coord']
-            # self.mapDims.min   = [-2, -1]
-            # self.mapDims.max   = [2, 2]
-            # self.mapDims.misc  = ['otherVal1','otherVal2']
-
             # Genome
-            # 
-
             self.sampleInd_genome = np.full((2,1),np.nan)
-
-            # SampleInd = namedtuple('Sampleind','genome')
-            # self.sampleInd = SampleInd(np.full((2,1),np.nan))
-            
-            # self.sampleInd.genome = np.full((2,1),np.nan)
-            
 
             self.recombine_range = [-2, 2]
             self.recombine_mutSigma = [1.0/8, 1.0/10]
             self.recombine_parents = 1
 
-            # Recombine = namedtuple('Recombine','range mutSigma parents')
-            # self.recombine = Recombine([-2, 2], [[1/8],[1/10]], 1)
-            # self.recombine.range    = [-2, 2]
-            # self.recombine.mutSigma = [[1/8],[1/10]]
-            # self.recombine.parents  = 1
     return Domain()
 

@@ -5,9 +5,10 @@ from domain.rastrigin.rastrigin_GetBehaviour import rastrigin_GetBehaviour
 def rastrigin_Evaluate(pop, d):
     def feval(funcName,*args):
         return eval(funcName)(*args)
+        
     # Get fitness of each individual
     fitness = feval(d.objFun, pop)
-    # print(fitness)
+
     # Get feature coordinates of each individual
     behaviour = feval(d.getBc, pop)
 
@@ -17,5 +18,3 @@ def rastrigin_Evaluate(pop, d):
     miscVal.append(np.zeros((1,len(pop))))
        
     return fitness, behaviour, miscVal, pop
-    # miscVal{1} = rand (1,length(pop));
-    # miscVal{2} = zeros(1,length(pop));
