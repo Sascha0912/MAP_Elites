@@ -3,10 +3,24 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.axes as axs
 def viewMap(map, value='fitness'):
-    eval('mapMat = map.' + value)
-
+    # Because map is no tuple in first iteration
+    mapIsTuple = isinstance(map, tuple)
+    if (value=='fitness'):
+        if (mapIsTuple):
+            if (isinstance(map[0], tuple)):
+                mapMat = map[0][0].fitness
+                edges  = map[0][0].edges
+            else:
+                mapMat = map[0].fitness
+                edges  = map[0].edges
+        else:
+            print("lal")
+            mapMat = map.fitness
+            edges  = map.edges
+    else:
+        raise Exception('Unknown value')
     mapRes = np.shape(mapMat)
-    edges  = map.edges
+    
 
     # Plot map values
     # TESTING
@@ -23,8 +37,16 @@ def viewMap(map, value='fitness'):
     plt.grid(linestyle='-', linewidth=2)
 
     # Label Axis
-    plt.xlabel(map.label[0])
-    plt.ylabel(map.label[1])
+    if (mapIsTuple):
+        if (isinstance(map[0], tuple)):
+            plt.xlabel(map[0][0].label[0])
+            plt.ylabel(map[0][0].label[1])
+        else:
+            plt.xlabel(map[0].label[0])
+            plt.ylabel(map[0].label[1])
+    else:
+        plt.xlabel(map.label[0])
+        plt.ylabel(map.label[1])
 
     # axs.Axes.set_xticklabels(edges[0])
     # axs.Axes.set_yticklabels(edges[1])
@@ -34,8 +56,8 @@ def viewMap(map, value='fitness'):
 
     # Output handles to graphics objects
     handle = []
-    handle[0] = fitPlot
-    handle[1] = imgHandle
-    handle[2] = hcb
+    handle.append(fitPlot)
+    handle.append(imgHandle)
+    handle.append(hcb)
 
     return handle

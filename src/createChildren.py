@@ -4,10 +4,19 @@ from domain.rastrigin.rastrigin_Variation import rastrigin_Variation
 def createChildren(map, d):
     def feval(funcName,*args):
         return eval(funcName)(*args)
+    mapIsTuple = isinstance(map,tuple)
     # Remove empty bins from parent pool
-    # print("map")
-    # print(map)
-    parentPool = map.genomes
+
+    # Because map is no tuple in first iteration
+    if (mapIsTuple):
+        # TEST
+        # In next iteration its a tuple ((Map object, improved), Record object)
+        if (isinstance(map[0], tuple)):
+            parentPool = map[0][0].genomes
+        else:
+            parentPool = map[0].genomes
+    else:
+        parentPool = map.genomes
     # print("parentPool")
     # print(parentPool)
     # print(parentPool)

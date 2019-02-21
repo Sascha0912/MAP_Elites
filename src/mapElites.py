@@ -123,10 +123,10 @@ def mapElites(**kwargs):
         record = Record()
         recorded = []
         if ~np.remainder(gen,recMod):
-            recorded[gen]        = True
-            record.evals[gen]    = nEvals
-            record.improved[gen] = improved
-            record.map[gen]      = map
+            recorded.insert(gen, True)
+            record.evals.insert(gen, nEvals)
+            record.improved.insert(gen, improved)
+            record.map.insert(gen, map)
     
     # Clean up data struct
     if recMod:

@@ -7,6 +7,6 @@ def addToMap(map, newInd, fitness, behaviour, misc):
     map = updateMap(replaced, replacement, map, newInd, fitness, misc)
 
     # TEST: delete this
-    # improved = len(replaced)/len(newInd)
+    improved = len(replaced)/len(newInd)
 
-    return map
+    return map, improved
