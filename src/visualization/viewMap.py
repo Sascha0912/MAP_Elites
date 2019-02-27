@@ -49,8 +49,9 @@ def viewMap(map, value='fitness'):
     # Full Screen
     # figManager = plt.get_current_fig_manager() 
     # figManager.full_screen_toggle() 
-
-    plt.show() 
+    plt.show(block=False)
+    plt.pause(2)
+    plt.close()
 
     # Output handles to graphics objects
     handle = []
