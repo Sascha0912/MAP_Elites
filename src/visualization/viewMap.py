@@ -15,16 +15,15 @@ def viewMap(map, value='fitness'):
                 mapMat = map[0].fitness
                 edges  = map[0].edges
         else:
-            print("lal")
             mapMat = map.fitness
             edges  = map.edges
     else:
         raise Exception('Unknown value')
     mapRes = np.shape(mapMat)
-    
+
     # Plot map values
     imgHandle = plt.matshow(np.flipud(np.rot90(mapMat)))
-    
+
     # Set labels on bin borders instead of centers
     fitPlot = plt.gca()
     plt.xticks(np.linspace(0.5,mapRes[0]+0.5,num=mapRes[0]+1),labels=edges[0])
@@ -47,8 +46,8 @@ def viewMap(map, value='fitness'):
     hcb.set_label(value)
 
     # Full Screen
-    # figManager = plt.get_current_fig_manager() 
-    # figManager.full_screen_toggle() 
+    # figManager = plt.get_current_fig_manager()
+    # figManager.full_screen_toggle()
     plt.show(block=False)
     plt.pause(2)
     plt.close()

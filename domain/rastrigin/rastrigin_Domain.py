@@ -1,5 +1,4 @@
 import numpy as np
-from collections import namedtuple
 
 def rastrigin_Domain():
     class Domain:
@@ -17,12 +16,12 @@ def rastrigin_Domain():
             self.batchSize = 2**6
             self.nEvals    = 2**10
 
-            # TESTING    
+            # TESTING
             self.mapDims_res = [8,10]
-            self.mapDims_label = ['x-coord','y-coord'] 
+            self.mapDims_label = ['x-coord','y-coord']
             self.mapDims_min = [-2, -1]
             self.mapDims_max = [2, 2]
-            self.mapDims_misc = ['otherVal1','otherVal2']               
+            self.mapDims_misc = ['otherVal1','otherVal2']
 
             # Genome
             self.sampleInd_genome = np.full((2,1),np.nan)
@@ -32,4 +31,3 @@ def rastrigin_Domain():
             self.recombine_parents = 1
 
     return Domain()
-
